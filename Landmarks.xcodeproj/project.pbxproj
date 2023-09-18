@@ -112,15 +112,9 @@
 		7779B0472AAE913200F5FCEA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				77BD3A812AB820A700E980C6 /* Landmark */,
 				77BD3A782AB8161900E980C6 /* Hikes */,
 				77BD3A732AB811CC00E980C6 /* Badge */,
-				7779B0372AADE8FD00F5FCEA /* CircleImage.swift */,
-				7779B0392AADEAC400F5FCEA /* MapView.swift */,
-				7779B02B2AADDF8A00F5FCEA /* ContentView.swift */,
-				7779B0412AAE828400F5FCEA /* LandmarkRow.swift */,
-				7779B0432AAE84AA00F5FCEA /* LandmarkList.swift */,
-				7779B0452AAE866E00F5FCEA /* LandmarkDetail.swift */,
-				77E704062AB0B8BD0036E4F0 /* FavoriteButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +159,20 @@
 				77BD3A7C2AB8161900E980C6 /* HikeView.swift */,
 			);
 			path = Hikes;
+			sourceTree = "<group>";
+		};
+		77BD3A812AB820A700E980C6 /* Landmark */ = {
+			isa = PBXGroup;
+			children = (
+				7779B0372AADE8FD00F5FCEA /* CircleImage.swift */,
+				7779B02B2AADDF8A00F5FCEA /* ContentView.swift */,
+				7779B0392AADEAC400F5FCEA /* MapView.swift */,
+				7779B0452AAE866E00F5FCEA /* LandmarkDetail.swift */,
+				7779B0412AAE828400F5FCEA /* LandmarkRow.swift */,
+				77E704062AB0B8BD0036E4F0 /* FavoriteButton.swift */,
+				7779B0432AAE84AA00F5FCEA /* LandmarkList.swift */,
+			);
+			path = Landmark;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
