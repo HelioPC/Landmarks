@@ -11,24 +11,42 @@ import MapKit
 struct MapView: View {
     var coordinate: CLLocationCoordinate2D
     
-    @State private var region = MKCoordinateRegion(
-            center: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868),
-            span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
-        )
+    @AppStorage("MapView.zoom")
+        private var zoom: Zoom = .medium
     
-    var body: some View {
-        Map(coordinateRegion: $region)
-            .onAppear {
-                setRegion(coordinate)
-            }
+    enum Zoom: String, CaseIterable, Identifiable {
+        case near = "Near"
+        case medium = "Medium"
+        case far = "Far"
+        
+        
+        var id: Zoom {
+            return self
+        }
     }
     
-    private func setRegion(_ coordinate: CLLocationCoordinate2D) {
-            region = MKCoordinateRegion(
+    var delta: CLLocationDegrees {
+            switch zoom {
+            case .near: return 0.02
+            case .medium: return 0.2
+            case .far: return 2
+            }
+        }
+    
+    private var region: MKCoordinateRegion {
+            MKCoordinateRegion(
                 center: coordinate,
-                span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2)
+                span: MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
             )
         }
+    
+    var body: some View {
+        Map(initialPosition: .region(region))
+    }
+}
+
+#Preview {
+    MapView(coordinate: CLLocationCoordinate2D(latitude: 34.011_286, longitude: -116.166_868))
 }
 
 struct MapView_Previews: PreviewProvider {

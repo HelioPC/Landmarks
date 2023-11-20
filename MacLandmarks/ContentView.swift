@@ -9,16 +9,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        LandmarkList()
+            .frame(minWidth: 700, minHeight: 300)
     }
 }
 
 #Preview {
     ContentView()
+        .environment(ModelData())
 }
